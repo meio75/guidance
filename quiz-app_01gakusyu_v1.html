@@ -153,7 +153,7 @@
         }
         
         .question-text {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
@@ -406,8 +406,8 @@
             <div class="start-container">
                 <h2 class="start-heading">履修ガイドクイズ(1)　学修編</h2>
                 <p class="start-description">
-                    このクイズでは、健康情報学科の履修・カリキュラムについての問題が出題されます。
-                    全10問、各問30秒の制限時間があります。
+                    履修・カリキュラムについての問題が出題されます。
+                    各問40秒の制限時間があります。
                 </p>
                 <button id="start-button" class="start-button">
                     クイズを始める
@@ -478,7 +478,7 @@
                     explanation: "90分を1コマとよんだりします。"
                 },
                 {
-                    question: "講義形式で授業をする、2単位の科目の場合、何回（何コマ）授業が実施される？",
+                    question: "1科目の授業は何回（何コマ）実施される？（講義形式2単位の科目の場合）",
                     options: [
                         "15回",
                         "18回",
@@ -488,14 +488,14 @@
                     explanation: "16回目に期末試験や発表会を実施する科目もあります。"
                 },
                 {
-                    question: "講義形式で2単位の科目の場合、1コマ90分の授業時間につき、何分の自学自修（予習や復習）が求められる？",
+                    question: "1コマ90分の授業時間につき、何分の自学自修（予習や復習）が求められる？",
                     options: [
                         "30分",
                         "60分",
                         "90分"
                     ],
                     correctAnswer: 2,
-                    explanation: "科目は授業と自学自修で構成されています。"
+                    explanation: "科目の内容は授業と自学自修で構成されています。"
                 },
                 {
                     question: "授業の何割以上出席しなければ成績評価の対象にならない？",
@@ -592,7 +592,7 @@
             
             // 変数
             let currentQuestion = 0;
-            let timerValue = 30;
+            let timerValue = 40;
             let timerInterval;
             let correctAnswers = 0;
             let answeredQuestions = 0;
@@ -674,7 +674,7 @@
             // タイマーリセット
             function resetTimer() {
     			clearInterval(timerInterval);
-    			timerValue = 30;
+    			timerValue = 40;
     			timerElement.textContent = timerValue;
     			timerElement.className = 'timer';
     			
@@ -744,7 +744,7 @@
                 clearInterval(timerInterval);
                 
                 // 残り時間表示してから次の問題へ
-                let remainingTime = 10; // 10秒後に次の問題へ
+                let remainingTime = 20; // 20秒後に次の問題へ
                 const waitInterval = setInterval(function() {
                     timerElement.textContent = remainingTime;
                     remainingTime--;
